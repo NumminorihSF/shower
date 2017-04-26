@@ -175,9 +175,9 @@
 	<ul>
 		<li><code>this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))</code></li>
 		<li>
-			<code>ReactDOMFiber.unstable_deferredUpdates(() =></code>
-			<code>  this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))</code>
-			<code>);</code>
+			<code>ReactDOMFiber.unstable_deferredUpdates(() =>
+                                this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))
+			);</code>
 		</li>
 	</ul>
 </section>
