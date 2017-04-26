@@ -9,114 +9,112 @@
 </head>
 <body class="shower list">
 
-	<header class="caption">
-		<h1>react-fiber</h1>
-		<!--<p>Yours Truly, Famous Inc.</p>-->
-	</header>
+<header class="caption">
+	<h1>react-fiber</h1>
+	<!--<p>Yours Truly, Famous Inc.</p>-->
+</header>
 
-	<section class="slide" id="cover">
-		<h2>react-fiber - чего ожидать и бояться со следующим релизом</h2>
-		<p><a href="https://github.com/NumminorihSF">Konstantin Petryaev</a></p>
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					}
-		</style>
-	</section>
+<section class="slide" id="cover">
+	<h2>react-fiber - чего ожидать и бояться со следующим релизом</h2>
+	<p><a href="https://github.com/NumminorihSF">Konstantin Petryaev</a></p>
+	<style>
+		#cover h2 {
+			margin:30px 0 0;
+			text-align:center;
+			font-size:70px;
+		}
+		#cover p {
+			margin:10px 0 0;
+			text-align:center;
+			font-style:italic;
+			font-size:20px;
+		}
+		#cover p a {
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2>Как работает реакт</h2>
-		<ol>
-			<li>Генерация виртуального DOM</li>
-			<li class="next">Сверка измененных узлов</li>
-			<li class="next">Перерисовка</li>
-		</ol>
-	</section>
+<section class="slide">
+	<h2>Как работает реакт</h2>
+	<ol>
+		<li>Генерация виртуального DOM</li>
+		<li class="next">Сверка измененных узлов</li>
+		<li class="next">Перерисовка</li>
+	</ol>
+</section>
 
-	<section class="slide">
-		<h2>Что внутри</h2>
-		<ul>
-			<li>reconciller:
-				<ul class="next">
-					<li>react</li>
-				</ul>
-			</li>
-			<li class="next">renderer:
-				<ul class="next">
-					<li>react-dom</li>
-					<li>react-native</li>
-				</ul>
-			</li>
-		</ul>
-	</section>
+<section class="slide">
+	<h2>Что внутри</h2>
+	<ul>
+		<li>reconciller:
+			<ul class="next">
+				<li>react</li>
+			</ul>
+		</li>
+		<li class="next">renderer:
+			<ul class="next">
+				<li>react-dom</li>
+				<li>react-native</li>
+			</ul>
+		</li>
+	</ul>
+</section>
 
-	<section class="slide">
-		<h2>Порядок изменения</h2>
-		<img class="cover" src="pictures/component-tree_0.svg"/>
-		<img class="cover next" src="pictures/component-tree_1.svg"/>
-		<img class="cover next" src="pictures/component-tree_2.svg"/>
-		<img class="cover next" src="pictures/component-tree_3.svg"/>
-		<img class="cover next" src="pictures/component-tree_4.svg"/>
-		<img class="cover next" src="pictures/component-tree_5.svg"/>
-		<img class="cover next" src="pictures/component-tree_6.svg"/>
-	</section>
+<section class="slide">
+	<h2>Порядок изменения</h2>
+	<img class="cover" src="pictures/component-tree_0.svg"/>
+	<img class="cover next" src="pictures/component-tree_1.svg"/>
+	<img class="cover next" src="pictures/component-tree_2.svg"/>
+	<img class="cover next" src="pictures/component-tree_3.svg"/>
+	<img class="cover next" src="pictures/component-tree_4.svg"/>
+	<img class="cover next" src="pictures/component-tree_5.svg"/>
+	<img class="cover next" src="pictures/component-tree_6.svg"/>
+</section>
 
-	<section class="slide">
-		<h2>Stack</h2>
-		<a target="_blank" href="react-fiber-vs-stack-demo/stack.html">Example</a>
-	</section>
+<section class="slide">
+	<h2 class="shout"><a target="_blank" href="react-fiber-vs-stack-demo/stack.html">Stack</a></h2>
+</section>
 
-	<section class="slide">
-		<h2>Проблемы?</h2>
-		<ul>
-			<li>Приложение тормозит</li>
-			<li class="next">Пользователь <strong>видит</strong>, что приложение тормозит</li>
-			<li class="next">Приложением невозможно пользоваться</li>
-		</ul>
-	</section>
+<section class="slide">
+	<h2>Проблемы?</h2>
+	<ul>
+		<li>Приложение тормозит</li>
+		<li class="next">Пользователь <strong>видит</strong>, что приложение тормозит</li>
+		<li class="next">Приложением невозможно пользоваться</li>
+	</ul>
+</section>
 
-	<section class="slide">
-		<h2>Почему?</h2>
-		<figure>
-			<img class="cover" src="pictures/perf-stack.png" alt="Stack problems">
-		</figure>
-	</section>
+<section class="slide">
+	<h2>Почему?</h2>
+	<figure>
+		<img class="cover" src="pictures/perf-stack.png" alt="Stack problems">
+	</figure>
+</section>
 
-	<section class="slide">
-		<h2>Fiber</h2>
-		<a target="_blank" href="react-fiber-vs-stack-demo/fiber.html">Example</a>
-	</section>
+<section class="slide">
+	<h2 class="shout"><a target="_blank" href="react-fiber-vs-stack-demo/fiber.html">Fiber</a></h2>
+</section>
 
-	<section class="slide">
-		<h2>Как?</h2>
-		<figure>
-			<img class="cover" src="pictures/perf-fiber.png" alt="Stack problems">
-		</figure>
-	</section>
+<section class="slide">
+	<h2>Как?</h2>
+	<figure>
+		<img class="cover" src="pictures/perf-fiber.png" alt="Stack problems">
+	</figure>
+</section>
 
-	<section class="slide">
-		<h2>Планирование</h2>
-		<ul>
-			<li>приостанавливание и возобновление работы</li>
-			<li>приоритезация задач</li>
-			<li>переиспользование ранее завершенных вычислений</li>
-			<li>отбрасывание ненужных вычислений</li>
-		</ul>
-	</section>
+<section class="slide">
+	<h2>Планирование</h2>
+	<ul>
+		<li>приостанавливание и возобновление работы</li>
+		<li>приоритезация задач</li>
+		<li>переиспользование ранее завершенных вычислений</li>
+		<li>отбрасывание ненужных вычислений</li>
+	</ul>
+</section>
 
-	<section class="slide">
-		<h2>Приоритеты</h2>
-		<pre class="next">
+<section class="slide">
+	<h2>Приоритеты</h2>
+	<pre class="next">
 			<code>module.exports = {</code>
 			<code>  NoWork: 0,</code>
 			<code>  SynchronousPriority: 1,</code>
@@ -127,40 +125,87 @@
 			<code>  OffscreenPriority: 6,</code>
 			<code>};</code>
 		</pre>
-	</section>
+</section>
 
-	<section class="slide">
-		<div style="height:100%; display: flex; flex-direction: column">
+<section class="slide">
+	<div style="height:100%; display: flex; flex-direction: column">
 		<h2>Как узнать готовность</h2>
-		<iframe src="http://isfiberreadyyet.com/" style="flex: 1; width: 100%;"></iframe>
-		</div>
-	</section>
+		<p><a href="http://isfiberreadyyet.com" target="_blank">Is Fiber Ready Yet</a></p>
+		<img src="pictures/isfiberreadyyet.png/" style="width: 100%;"/>
+	</div>
+</section>
 
-	<section class="slide">
-		<h2>Приятные мелочи</h2>
-		<ul>
-			<li><pre><code>throw new Error('Anything')</code></pre> внутри <pre><code>ReactComponent#render()</code></pre> больше не ломает приложение</li>
-			<li class="next">Из функции render можно вернуть массив элементов</li>
-			<li class="next">Можно получить информацию, виден ли элемент на странице</li>
-		</ul>
-	</section>
+<section class="slide">
+	<h2>Приятные мелочи</h2>
+	<ul>
+		<li><code>throw new Error('Anything')</code> внутри ReactComponent#render() больше не ломает приложение</li>
+		<li class="next">Из функции render можно вернуть массив элементов</li>
+		<li class="next">Можно получить информацию, виден ли элемент на странице</li>
+	</ul>
+</section>
 
-	<section class="slide">
-		<h2>Что может сломаться?</h2>
-		<ul>
-			<li>server rendering пока не работет</li>
-			<li class="next">Приватное API в текущий момент ломается (react-portal)</li>
-		</ul>
-	</section>
+<section class="slide">
+	<h2>Что может сломаться?</h2>
+	<ul>
+		<li>server-side rendering пока не работет</li>
+		<li class="next">Приватное API</li>
+	</ul>
+</section>
 
-	<footer class="badge">
-		<a href="https://github.com/NumminorihSF/slides-react-fiber">Fork me on GitHub</a>
-	</footer>
+<section class="slide">
+	<h2>Как попробовать?</h2>
+	<ul>
+		<li><code>git clone https://github.com/facebook/react.git</code></li>
+		<li class="next"><code>cd react && npm i</code></li>
+		<li class="next"><code>gulp</code>, если есть ошибки - <code>gulp react:extract-errors && gulp</code></li>
+		<li class="next">Собранный пакет забрать из <code>build/packages</code></li>
+	</ul>
+	<h2 class="shout next">Нет. Это не работает</h2>
+</section>
 
-	<div class="progress"></div>
+<section class="slide">
+	<h2>Как попробовать?</h2>
+	<ul>
+		<li><code>npm i -S react@next react-dom@next</code></li>
+	</ul>
+</section>
 
-	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+<section class="slide">
+	<h2>А код то разный</h2>
+	<ul>
+		<li><code>this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))</code></li>
+		<li>
+			<code>ReactDOMFiber.unstable_deferredUpdates(() =></code>
+			<code>  this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))</code>
+			<code>);</code>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2 class="shout">Спасибо за внимание</h2>
+</section>
+
+<section class="slide">
+	<h2>Контакты</h2>
+	<ul>
+		<li>GitHub: <a href="https://github.com/NumminorihSF" target="_blank">NumminorihSF</a></li>
+		<li><a href="mailto:numminorihsf@gmail.com">numminorihsf@gmail.com</a></li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2 class="shout shrink">Вопросы?</h2>
+</section>
+
+<footer class="badge">
+	<a href="https://github.com/NumminorihSF/slides-react-fiber">Fork me on GitHub</a>
+</footer>
+
+<div class="progress"></div>
+
+<script src="node_modules/shower-core/shower.min.js"></script>
+<!-- Copyright © 2017 Konstantin Petryaev -->
 
 </body>
 </html>
