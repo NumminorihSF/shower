@@ -109,6 +109,16 @@
           </SierpinskiTriangle>,
         ];
       }
+      SierpinskiTriangle.shouldComponentUpdate = function(oldProps, newProps) {
+        var o = oldProps;
+        var n = newProps;
+        return !(
+          o.x === n.x &&
+          o.y === n.y &&
+          o.s === n.s &&
+          o.children === n.children
+        );
+      };
 
       class ExampleApplication extends React.Component {
         constructor() {
@@ -120,7 +130,11 @@
           this.intervalID = setInterval(this.tick, 1000);
         }
         tick() {
-			this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))
+		  ReactDOMFiber.unstable_deferredUpdates(() => {
+			const start = Date.now();
+            while (Date.now() - start < 100) {}
+            this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))
+		  });
         }
         componentWillUnmount() {
           clearInterval(this.intervalID);
