@@ -141,6 +141,7 @@
 		<li><code>throw new Error('Anything')</code> внутри ReactComponent#render() больше не ломает приложение</li>
 		<li class="next">Из функции render можно вернуть массив элементов</li>
 		<li class="next">Можно получить информацию, виден ли элемент на странице</li>
+		<li class="next"><code>shouldComponentUpdate</code> для функциональных компонентов</li>
 	</ul>
 </section>
 
@@ -172,13 +173,27 @@
 
 <section class="slide">
 	<h2>А код то разный</h2>
+	<pre>
+		<code>const cb = state => ({ seconds: (state.seconds % 10) + 1 });</code>
+		<code>this.setState(cb)</code>
+	</pre>
+	<pre class="next">
+		<code>ReactDOMFiber.unstable_deferredUpdates(() =></code>
+		<code>  this.setState(cb)</code>
+		<code>);</code>
+	</pre>
+</section>
+
+<section class="slide">
 	<ul>
-		<li><code>this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))</code></li>
-		<li>
-			<code>ReactDOMFiber.unstable_deferredUpdates(() =>
-                                this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))
-			);</code>
-		</li>
+		<li><a target="_blank" href="react-fiber-vs-stack-demo/stack.html">Stack</a></li>
+		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/stack-fast.html">Stack с включенным <code>shouldComponentUpdate</code></a></li>
+		<li><a target="_blank" href="react-fiber-vs-stack-demo/fiber.html">Fiber</a></li>
+		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-stable.html">Fiber без unstable API</a></li>
+		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-nscu.html">Fiber с отключенным <code>shouldComponentUpdate</code></a></li>
+		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-equals.html">Fiber с отключенным <code>sCU</code> и без unstable API (~Stack)</a></li>
+		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-huge.html">Fiber с очень долгими "вычислениями" внутри каждого <code>setState</code></a></li>
+
 	</ul>
 </section>
 

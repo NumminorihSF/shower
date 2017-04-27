@@ -67,7 +67,7 @@
             background: this.state.hover ? '#ff0' : dotStyle.background
           };
           return (
-            <div style={style} className="dot" фonMouseEnter={() => this.enter()} onMouseLeave={() => this.leave()}>
+            <div style={style} className="dot" onMouseEnter={() => this.enter()} onMouseLeave={() => this.leave()}>
               {this.state.hover ? '*' + props.text + '*' : props.text}
             </div>
           );

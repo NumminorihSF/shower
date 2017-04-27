@@ -67,7 +67,7 @@
             background: this.state.hover ? '#ff0' : dotStyle.background
           };
           return (
-            <div style={style} className="dot" фonMouseEnter={() => this.enter()} onMouseLeave={() => this.leave()}>
+            <div style={style} className="dot" onMouseEnter={() => this.enter()} onMouseLeave={() => this.leave()}>
               {this.state.hover ? '*' + props.text + '*' : props.text}
             </div>
           );
@@ -109,16 +109,6 @@
           </SierpinskiTriangle>,
         ];
       }
-      SierpinskiTriangle.shouldComponentUpdate = function(oldProps, newProps) {
-        var o = oldProps;
-        var n = newProps;
-        return !(
-          o.x === n.x &&
-          o.y === n.y &&
-          o.s === n.s &&
-          o.children === n.children
-        );
-      };
 
       class ExampleApplication extends React.Component {
         constructor() {
