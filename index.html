@@ -96,35 +96,57 @@
 </section>
 
 <section class="slide">
-	<h2>Как?</h2>
+	<h2>Почему?</h2>
 	<figure>
 		<img class="cover" src="pictures/perf-fiber.png" alt="Stack problems">
 	</figure>
 </section>
 
 <section class="slide">
+	<h2>Как?</h2>
+	<ul>
+		<li>Каждый компонент - отдельный fiber</li>
+		<li>Fiber не вызывает внутри отрисовку потомков, а ставит их в очередь</li>
+		<li>Очередь имеет приоритеты</li>
+		<li>Обрабатываем более приоритетные задачи</li>
+		<li>По истичению 16ms отдаем управление браузеру</li>
+	</ul>
+</section>
+
+<section class="slide" id="requests">
+	<style>
+		#requests p {
+			font-size: 2em;
+			text-align: center;
+		}
+	</style>
+	<p>requestAnimationFrame</p>
+	<p>requestIdleCallback</p>
+</section>
+
+<section class="slide">
 	<h2>Планирование</h2>
 	<ul>
-		<li>приостанавливание и возобновление работы</li>
-		<li>приоритезация задач</li>
-		<li>переиспользование ранее завершенных вычислений</li>
-		<li>отбрасывание ненужных вычислений</li>
+		<li>Приостанавливание и возобновление работы</li>
+		<li>Приоритезация задач</li>
+		<li>Переиспользование ранее завершенных вычислений</li>
+		<li>Отбрасывание ненужных вычислений</li>
 	</ul>
 </section>
 
 <section class="slide">
 	<h2>Приоритеты</h2>
-	<pre class="next">
-			<code>module.exports = {</code>
-			<code>  NoWork: 0,</code>
-			<code>  SynchronousPriority: 1,</code>
-			<code>  TaskPriority: 2,</code>
-			<code>  AnimationPriority: 3,</code>
-			<code>  HighPriority: 4,</code>
-			<code>  LowPriority: 5,</code>
-			<code>  OffscreenPriority: 6,</code>
-			<code>};</code>
-		</pre>
+	<pre>
+		<code>module.exports = {</code>
+		<code class="next">  NoWork: 0,</code>
+		<code class="next">  SynchronousPriority: 1,</code>
+		<code class="next">  TaskPriority: 2,</code>
+		<code class="next">  AnimationPriority: 3,</code>
+		<code class="next">  HighPriority: 4,</code>
+		<code class="next">  LowPriority: 5,</code>
+		<code class="next">  OffscreenPriority: 6,</code>
+		<code>};</code>
+	</pre>
 </section>
 
 <section class="slide">
@@ -136,12 +158,22 @@
 </section>
 
 <section class="slide">
+	<h2>Помимо скорости</h2>
+	<ul>
+		<li><code>throw new Error('Anything')</code> внутри <code>render</code> больше не ломает приложение</li>
+		<li class="next">Из функции render можно вернуть массив элементов</li>
+		<li class="next">Можно будет получить информацию, виден ли элемент на странице (в данный момент не реализовано, возможно не будет работать в 16м релизе)</li>
+		<li class="next">Очень глубокая вложенность компонентов</li>
+
+	</ul>
+</section>
+
+<section class="slide">
 	<h2>Приятные мелочи</h2>
 	<ul>
-		<li><code>throw new Error('Anything')</code> внутри ReactComponent#render() больше не ломает приложение</li>
-		<li class="next">Из функции render можно вернуть массив элементов</li>
-		<li class="next">Можно получить информацию, виден ли элемент на странице</li>
-		<li class="next"><code>shouldComponentUpdate</code> для функциональных компонентов</li>
+		<li><code>shouldComponentUpdate</code> для функциональных компонентов</li>
+		<li class="next">Модальное окно для Warning</li>
+		<li class="next">Возможность отмены функционального <code>setState</code></li>
 	</ul>
 </section>
 
@@ -150,6 +182,8 @@
 	<ul>
 		<li>server-side rendering пока не работет</li>
 		<li class="next">Приватное API</li>
+		<li class="next"><code>defaultProps</code> нельзя будет менять</li>
+		<li class="next"><code>componentWillUpdate</code> может вызваться несколько раз без реального апдейта</li>
 	</ul>
 </section>
 
