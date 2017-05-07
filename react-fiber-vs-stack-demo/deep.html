@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Deep Example</title>
+  </head>
+  <body>
+  	<h1>Fiber</h1>
+	<script>
+		window.addEventListener('keydown', function(e){
+			if (e.keyCode === 27 || e.witch === 27) window.close();
+		});
+	</script>
+    <div id="container"></div>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom-fiber.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+    <script type="text/babel">
+      class Deep extends React.Component {
+        render() {
+          var props = this.props;
+          var count = props.count;
+          var nextCount = count - 1;
+          var content = <span key="noop"/>;
+          if (nextCount > 0) content = <Deep key='next' count={nextCount}/>;
+          return (
+            [
+				<div key="current">{count}</div>,
+				content
+            ]
+          );
+        }
+      }
+
+      class ExampleApplication extends React.Component {
+        constructor() {
+          super();
+          this.state = { seconds: 0 };
+          this.tick = this.tick.bind(this);
+        }
+        tick() {
+          ReactDOMFiber.unstable_deferredUpdates(() =>
+            this.setState(state => ({ seconds: (state.seconds % 10) + 1 }))
+          );
+        }
+        componentWillUnmount() {
+          clearInterval(this.intervalID);
+        }
+        render() {
+          return (
+              <div>
+                <Deep count={10000}>
+                  {this.state.seconds}
+                </Deep>
+              </div>
+          );
+        }
+      }
+
+      var start = new Date().getTime();
+      function update() {
+        ReactDOMFiber.render(
+          <ExampleApplication elapsed={new Date().getTime() - start} />,
+          document.getElementById('container')
+        );
+      }
+      requestAnimationFrame(update);
+    </script>
+  </body>
+</html>
