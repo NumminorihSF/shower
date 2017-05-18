@@ -15,13 +15,20 @@
 </header>
 
 <section class="slide" id="cover">
-	<h2>react-fiber - чего ожидать и бояться со следующим релизом</h2>
+	<h2>
+		react-fiber <br/>
+		<small>чего ожидать и бояться со следующим релизом</small>
+	</h2>
 	<p><a href="https://github.com/NumminorihSF">Konstantin Petryaev</a></p>
 	<style>
 		#cover h2 {
 			margin:30px 0 0;
 			text-align:center;
 			font-size:70px;
+			line-height: 1;
+		}
+		#cover h2 small {
+			font-size: 30px;
 		}
 		#cover p {
 			margin:10px 0 0;
@@ -29,7 +36,37 @@
 			font-style:italic;
 			font-size:20px;
 		}
-		#cover p a {
+	</style>
+</section>
+
+<section class="slide" id="who-am-i">
+	<h2>Откуда я</h2>
+	<div class="double">
+		<ul>
+			<li>Компания на рынке 11 лет</li>
+			<li>6 офисов</li>
+			<li>140 сотрудников</li>
+			<li>Проекты:<ul>
+				<li>Web</li>
+				<li>VR</li>
+				<li>Mobile</li>
+				<li>IOT</li>
+			</ul>
+			</li>
+		</ul>
+
+		<div>
+			<img src="pictures/interesnee.jpg" alt="Очень интересно"/>
+		</div>
+	</div>
+
+	<style>
+		#who-am-i>div>div {
+			text-align: right;
+		}
+		#who-am-i>div>div>img {
+			height: 250px;
+			width: auto;
 		}
 	</style>
 </section>
@@ -109,7 +146,7 @@
 		<li>Fiber не вызывает внутри отрисовку потомков, а ставит их в очередь</li>
 		<li>Очередь имеет приоритеты</li>
 		<li>Обрабатываем более приоритетные задачи</li>
-		<li>По истичению 16ms отдаем управление браузеру</li>
+		<li>По истечению 16ms отдаем управление браузеру</li>
 	</ul>
 </section>
 
@@ -138,13 +175,13 @@
 	<h2>Приоритеты</h2>
 	<pre>
 		<code>module.exports = {</code>
-		<code class="next">  NoWork: 0,</code>
-		<code class="next">  SynchronousPriority: 1,</code>
-		<code class="next">  TaskPriority: 2,</code>
-		<code class="next">  AnimationPriority: 3,</code>
-		<code class="next">  HighPriority: 4,</code>
-		<code class="next">  LowPriority: 5,</code>
-		<code class="next">  OffscreenPriority: 6,</code>
+		<code class="next">  NoWork: 0,</code>              <!-- No work is pending. -->
+		<code class="next">  SynchronousPriority: 1,</code> <!-- For controlled text inputs. Synchronous side-effects. -->
+		<code class="next">  TaskPriority: 2,</code>        <!-- Completes at the end of the current tick. -->
+		<code class="next">  AnimationPriority: 3,</code>   <!-- Needs to complete before the next frame. -->
+		<code class="next">  HighPriority: 4,</code>        <!-- Interaction that needs to complete pretty soon to feel responsive. -->
+		<code class="next">  LowPriority: 5,</code>         <!-- Data fetching, or result from updating stores. -->
+		<code class="next">  OffscreenPriority: 6,</code>   <!-- Won't be visible but do the work in case it becomes visible. -->
 		<code>};</code>
 	</pre>
 </section>
@@ -202,6 +239,11 @@
 	<h2>Как попробовать?</h2>
 	<ul>
 		<li><code>npm i -S react@next react-dom@next</code></li>
+		<li>Дебагер:<ul>
+			<li><code>git clone https://github.com/facebook/react.git</code></li>
+			<li><code>cd react/fixtures/fiber-debugger</code></li>
+			<li>Следуем инструкциям из <code>README.md</code></li>
+		</ul></li>
 	</ul>
 </section>
 
