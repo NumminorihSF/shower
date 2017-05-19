@@ -143,10 +143,10 @@
 	<h2>Как?</h2>
 	<ul>
 		<li>Каждый компонент - отдельный fiber</li>
-		<li>Fiber не вызывает внутри отрисовку потомков, а ставит их в очередь</li>
-		<li>Очередь имеет приоритеты</li>
-		<li>Обрабатываем более приоритетные задачи</li>
-		<li>По истечению 16ms отдаем управление браузеру</li>
+		<li class="next">Fiber не вызывает внутри отрисовку потомков, а ставит их в очередь</li>
+		<li class="next">Очередь имеет приоритеты</li>
+		<li class="next">Обрабатываем более приоритетные задачи</li>
+		<li class="next">По истечению 16ms отдаем управление браузеру</li>
 	</ul>
 </section>
 
@@ -239,7 +239,7 @@
 	<h2>Как попробовать?</h2>
 	<ul>
 		<li><code>npm i -S react@next react-dom@next</code></li>
-		<li>Дебагер:<ul>
+		<li class="next">Дебагер:<ul>
 			<li><code>git clone https://github.com/facebook/react.git</code></li>
 			<li><code>cd react/fixtures/fiber-debugger</code></li>
 			<li>Следуем инструкциям из <code>README.md</code></li>
@@ -251,6 +251,8 @@
 	<h2>А код то разный</h2>
 	<pre>
 		<code>const cb = state => ({ seconds: (state.seconds % 10) + 1 });</code>
+	</pre>
+	<pre class="next">
 		<code>this.setState(cb)</code>
 	</pre>
 	<pre class="next">
@@ -269,7 +271,6 @@
 		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-nscu.html">Fiber с отключенным <code>shouldComponentUpdate</code></a></li>
 		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-equals.html">Fiber с отключенным <code>sCU</code> и без unstable API (~Stack)</a></li>
 		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-huge.html">Fiber с очень долгими "вычислениями" внутри каждого <code>setState</code></a></li>
-
 	</ul>
 </section>
 
@@ -278,10 +279,20 @@
 </section>
 
 <section class="slide">
+	<h2>Полезные ссылки</h2>
+	<ul>
+		<li><a href="https://github.com/facebook/react/issues/8854">React 16 Road Map</a></li>
+		<li><a href="https://github.com/acdlite/react-fiber-architecture">React Fiber Architecture</a></li>
+		<li><a href="http://isfiberreadyyet.com/">Is fiber ready yet</a></li>
+		<li><a href="https://goo.gl/wA220q">Презентация</a></li>
+	</ul>
+</section>
+<section class="slide">
 	<h2>Контакты</h2>
 	<ul>
 		<li>GitHub: <a href="https://github.com/NumminorihSF" target="_blank">NumminorihSF</a></li>
-		<li><a href="mailto:numminorihsf@gmail.com">numminorihsf@gmail.com</a></li>
+		<li>E-mail: <a href="mailto:numminorihsf@gmail.com">numminorihsf@gmail.com</a></li>
+		<li>Skype: <a>numminorihsf</a></li>
 	</ul>
 </section>
 
