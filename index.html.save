@@ -39,11 +39,6 @@
 	</style>
 </section>
 
-<section class="slide">
-        <h2>Эта презентация</h2>
-        <img class="cover" src="http://qrcoder.ru/code/?https%3A%2F%2Fnumminorihsf.github.io%2Fslides-react-fiber&10&0" />
-</section>
-
 <section class="slide" id="who-am-i">
 	<h2>Откуда я</h2>
 	<div class="double">
@@ -276,6 +271,7 @@
 		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-nscu.html">Fiber с отключенным <code>shouldComponentUpdate</code></a></li>
 		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-equals.html">Fiber с отключенным <code>sCU</code> и без unstable API (~Stack)</a></li>
 		<li class="next"><a target="_blank" href="react-fiber-vs-stack-demo/fiber-huge.html">Fiber с очень долгими "вычислениями" внутри каждого <code>setState</code></a></li>
+
 	</ul>
 </section>
 
@@ -284,20 +280,20 @@
 </section>
 
 <section class="slide">
-	<h2>Полезные ссылки</h2>
-	<ul>
-		<li><a href="https://github.com/facebook/react/issues/8854">React 16 Road Map</a></li>
-		<li><a href="https://github.com/acdlite/react-fiber-architecture">React Fiber Architecture</a></li>
-		<li><a href="http://isfiberreadyyet.com/">Is fiber ready yet</a></li>
-		<li><a href="https://goo.gl/wA220q">Презентация</a></li>
-	</ul>
+        <h2>Полезные ссылки</h2>
+        <ul>
+                <li><a href="https://github.com/facebook/react/issues/8854">react 16 roadmap</a></li>
+                <li>E-mail: <a href="mailto:numminorihsf@gmail.com">numminorihsf@gmail.com</a></li>
+                <li><a href="http://isfiberreadyyet.com/">Is fiber ready </a></li>
+        </ul>
 </section>
+
 <section class="slide">
 	<h2>Контакты</h2>
 	<ul>
 		<li>GitHub: <a href="https://github.com/NumminorihSF" target="_blank">NumminorihSF</a></li>
 		<li>E-mail: <a href="mailto:numminorihsf@gmail.com">numminorihsf@gmail.com</a></li>
-		<li>Skype: <a>numminorihsf</a></li>
+                <li>Skype: <a>numminorihsf</a></li>
 	</ul>
 </section>
 
